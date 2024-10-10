@@ -78,4 +78,3 @@ const Profile = lazy(()=> import ('Pages/Profile/Profile'));
 </div>
   )
     };
-    

@@ -4,9 +4,7 @@ import { Container, Input, Svg, SvgReset } from './SearchField.styled';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../redux/store'; 
 
-// interface SearchFieldProps {
-//   fetch: (params: { keyword: string, pageNumber: number }) => Promise<any>;  
-// }
+
 
 export const SearchField = ({ fetch }) => {
   const dispatch = useDispatch<AppDispatch>(); 

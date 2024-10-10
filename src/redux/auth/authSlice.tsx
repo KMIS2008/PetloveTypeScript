@@ -58,5 +58,3 @@ const initialState:AuthState = {
 
 
   export const authReducer = authSlice.reducer;
-
-  

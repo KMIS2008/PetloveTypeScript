@@ -74,5 +74,3 @@ object-fit: cover;
     border-radius: 90px;
 }
 `
-
-

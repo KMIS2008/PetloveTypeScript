@@ -16,7 +16,6 @@ import {
   REGISTER,
 } from 'redux-persist';
 
-// Типізація для всіх редюсерів
 export interface RootState {
   auth: AuthState;
   news: ReturnType<typeof newsReducer>;

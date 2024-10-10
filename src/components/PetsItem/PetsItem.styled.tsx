@@ -71,7 +71,3 @@ line-height: 1,17;
 letter-spacing: -0.02em;
 color: #262626;
 `
-
-
-
-

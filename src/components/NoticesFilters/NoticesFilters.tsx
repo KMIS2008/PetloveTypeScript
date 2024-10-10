@@ -246,9 +246,7 @@ export const NoticesFilters = ({ notices }) => {
         <Form>
           <Container>
             <ContainerTabletSelect>
-              <SearchField fetch={getNoticesFilter}
-              //  setFieldValue={(value) => setFieldValue('search', value)}
-                />
+              <SearchField fetch={getNoticesFilter} />
               <ContainerSelect>
                 <CustomSelect
                   as="select"
@@ -308,10 +306,6 @@ export const NoticesFilters = ({ notices }) => {
                         dispatch(getNoticesFilter({ ...getFilter(1, 6), location: option.value }));
                       
                     };
-                    // setSelectedLocation(option);
-                    // setHasInput(true);
-                    // setFieldValue('location', option.value);
-                    // dispatch(getNoticesFilter({ ...getFilter(1, 6), location: option.value }));
                   }}
                 />
                 <button type='submit'>

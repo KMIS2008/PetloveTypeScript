@@ -76,4 +76,3 @@ color: #2B2B2A;
     font-size: 18px;
     }
 `;
-

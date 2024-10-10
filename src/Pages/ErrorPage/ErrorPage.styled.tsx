@@ -82,5 +82,3 @@ background: ${p=>p.theme.colors.white};
     padding: 14px 30px;
 }
 `
-
-

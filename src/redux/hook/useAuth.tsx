@@ -7,11 +7,6 @@ import {
 } from '../auth/selects';
 import { User } from '../auth/authSlice.js';
 
-// interface useAuthProps{
-//   isLoggedIn:boolean,
-//   isRefreshing:boolean,
-//   user:User
-// }
 
 export const useAuth = () => {
   const isLoggedIn = useSelector<RootState, boolean>(selectIsLoggedIn);
