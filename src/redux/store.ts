@@ -1,11 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import {newsReducer} from './newsSlice';
-import {noticesReducer} from './noticesSlice';
-import { authReducer, AuthState} from "./auth/authSlice";
-import {friendReducer} from './friendsSlice';
-import {userReducer } from './userSlice';
+import { newsReducer } from './newsSlice';
+import { noticesReducer } from './noticesSlice';
+import { authReducer, AuthState } from "./auth/authSlice";
+import { friendReducer } from './friendsSlice';
+import { userReducer } from './userSlice';
 import storage from 'redux-persist/lib/storage';
-
 import {
   persistStore,
   persistReducer,
@@ -17,6 +16,14 @@ import {
   REGISTER,
 } from 'redux-persist';
 
+// Типізація для всіх редюсерів
+export interface RootState {
+  auth: AuthState;
+  news: ReturnType<typeof newsReducer>;
+  notices: ReturnType<typeof noticesReducer>;
+  friends: ReturnType<typeof friendReducer>;
+  user: ReturnType<typeof userReducer>;
+}
 
 const authPersistConfig = {
   key: 'auth',
@@ -26,7 +33,7 @@ const authPersistConfig = {
 
 export const store = configureStore({
   reducer: {
-    auth: persistReducer<AuthState >(authPersistConfig, authReducer),
+    auth: persistReducer<AuthState>(authPersistConfig, authReducer),
     news: newsReducer,
     notices: noticesReducer,
     friends: friendReducer,
@@ -34,16 +41,14 @@ export const store = configureStore({
   },
   
   middleware: getDefaultMiddleware =>
-  getDefaultMiddleware({
-    serializableCheck: {
-      ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-    },
-    immutableCheck: false,
-  }),
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+      immutableCheck: false,
+    }),
 });
 
 export const persistor = persistStore(store);
-
-export type RootState = ReturnType<typeof store.getState>;
 
 export type AppDispatch = typeof store.dispatch;
